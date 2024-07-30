@@ -17,16 +17,16 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+            'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-              'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -46,32 +46,32 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAZ5B8yJ4cmy-Ki6L5Z9_sdBr90uForOYQ',
-    appId: '1:568704340221:web:3defe821b125154b7cae94',
-    messagingSenderId: '568704340221',
-    projectId: 'fireflutter-54368',
-    authDomain: 'fireflutter-54368.firebaseapp.com',
-    databaseURL: 'https://fireflutter-54368-default-rtdb.firebaseio.com',
-    storageBucket: 'fireflutter-54368.appspot.com',
-    measurementId: 'G-Y3S1B35VJ1',
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyA3646pWdbtDdNomq5Sd6xeZGzoE1JZoy8',
+    appId: '1:894547244965:android:c308b52844345976585a4c',
+    messagingSenderId: '894547244965',
+    projectId: 'sensors-25d65',
+    databaseURL: 'https://sensors-25d65-default-rtdb.firebaseio.com',
+    storageBucket: 'sensors-25d65.appspot.com',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD1igNVfbC83CKxV6cJ8HvogW_TpMuJl5M',
-    appId: '1:568704340221:android:afbcf002e3d7951f7cae94',
-    messagingSenderId: '568704340221',
-    projectId: 'fireflutter-54368',
-    storageBucket: 'fireflutter-54368.appspot.com',
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCD12QalKGplQaqaqxDb3iWEXi6bC07ynQ',
+    appId: '1:894547244965:ios:e83bc6bdd1189fdc585a4c',
+    messagingSenderId: '894547244965',
+    projectId: 'sensors-25d65',
+    databaseURL: 'https://sensors-25d65-default-rtdb.firebaseio.com',
+    storageBucket: 'sensors-25d65.appspot.com',
+    iosBundleId: 'mx.edu.utch.rtdata',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAZ5B8yJ4cmy-Ki6L5Z9_sdBr90uForOYQ',
-    appId: '1:568704340221:web:e4d2ef25932513ac7cae94',
-    messagingSenderId: '568704340221',
-    projectId: 'fireflutter-54368',
-    authDomain: 'fireflutter-54368.firebaseapp.com',
-    storageBucket: 'fireflutter-54368.appspot.com',
-    measurementId: 'G-8XL4RVRVM0',
+    apiKey: 'AIzaSyBrTZ4QDnjCKedLNoTQikeEifo53t_i9Dk',
+    appId: '1:894547244965:web:a20c1cea588a46f5585a4c',
+    messagingSenderId: '894547244965',
+    projectId: 'sensors-25d65',
+    authDomain: 'sensors-25d65.firebaseapp.com',
+    databaseURL: 'https://sensors-25d65-default-rtdb.firebaseio.com',
+    storageBucket: 'sensors-25d65.appspot.com',
   );
 }
